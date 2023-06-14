@@ -21,10 +21,4 @@ public class SimpleConvert {
         return Stream.iterate(0, i -> i < example.length, i -> i + 1)
                 .collect(Collectors.toMap(i -> example[i], i -> i, (s1, s2) -> s1));
     }
-
-    public static void main(String[] args) {
-        SimpleConvert sc = new SimpleConvert();
-        Map<String, Integer> map = sc.toMap("a", "b", "c", "0", "1");
-        map.forEach((s, i) -> System.out.println(s + " - " + i));
-    }
 }
