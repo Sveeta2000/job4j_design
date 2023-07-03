@@ -30,28 +30,28 @@ public class User {
         return children == user.children && Objects.equals(name, user.name) && Objects.equals(birthday, user.birthday);
     }
 
-    public static void main(String[] args) {
-        Calendar calendar = new GregorianCalendar(2000, Calendar.MARCH, 17);
-        User user1 = new User("Anna", 1, calendar);
-        int hashCode1 = user1.hashCode();
-        int hash1 = hashCode1 ^ (hashCode1 >>> 16);
-        int bucket1 = hash1 & 15;
-
-        User user2 = new User("Anna", 1, calendar);
-        int hashCode2 = user2.hashCode();
-        int hash2 = hashCode2 ^ (hashCode2 >>> 16);
-        int bucket2 = hash2 & 15;
-        Map<User, Object> map = new HashMap<>(16);
-        map.put(user1, new Object());
-        map.put(user2, new Object());
-
-        System.out.printf("user1 - hashCode: %s, hash: %s, bucket: %s", hashCode1, hash1, bucket1);
-        System.out.println();
-        System.out.printf("user2 - hashCode: %s, hash: %s, bucket: %s", hashCode2, hash2, bucket2);
-        System.out.println();
-        for (Map.Entry<User, Object> entry : map.entrySet()) {
-            System.out.println(entry.getKey() + " - " + entry.getValue());
-        }
-        System.out.println(user1.equals(user2));
-    }
+//    public static void main(String[] args) {
+//        Calendar calendar = new GregorianCalendar(2000, Calendar.MARCH, 17);
+//        User user1 = new User("Anna", 1, calendar);
+//        int hashCode1 = user1.hashCode();
+//        int hash1 = hashCode1 ^ (hashCode1 >>> 16);
+//        int bucket1 = hash1 & 15;
+//
+//        User user2 = new User("Anna", 1, calendar);
+//        int hashCode2 = user2.hashCode();
+//        int hash2 = hashCode2 ^ (hashCode2 >>> 16);
+//        int bucket2 = hash2 & 15;
+//        Map<User, Object> map = new HashMap<>(16);
+//        map.put(user1, new Object());
+//        map.put(user2, new Object());
+//
+//        System.out.printf("user1 - hashCode: %s, hash: %s, bucket: %s", hashCode1, hash1, bucket1);
+//        System.out.println();
+//        System.out.printf("user2 - hashCode: %s, hash: %s, bucket: %s", hashCode2, hash2, bucket2);
+//        System.out.println();
+//        for (Map.Entry<User, Object> entry : map.entrySet()) {
+//            System.out.println(entry.getKey() + " - " + entry.getValue());
+//        }
+//        System.out.println(user1.equals(user2));
+//    }
 }
