@@ -30,7 +30,7 @@ public class SimpleMap<K, V> implements Map<K, V> {
     }
 
     private int hash(int hashCode) {
-        return (hashCode == 0) ? 0 : (hashCode) ^ (hashCode >>> 16);
+        return (hashCode) ^ (hashCode >>> 16);
     }
 
     private int indexFor(int hash) {
