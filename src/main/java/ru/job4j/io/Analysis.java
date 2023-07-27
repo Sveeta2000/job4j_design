@@ -11,9 +11,9 @@ public class Analysis {
             while ((line = reader.readLine()) != null) {
                 boolean working = line.startsWith("200") || line.startsWith("300");
                 if (!working && stopWorkingTime == null) {
-                        stopWorkingTime = line.substring(3);
+                        stopWorkingTime = line.substring(4);
                 } else if (stopWorkingTime != null && working) {
-                    writer.printf("%s;%s%n", stopWorkingTime, line.substring(3));
+                    writer.printf("%s;%s%n", stopWorkingTime, line.substring(4));
                     stopWorkingTime = null;
                 }
             }
