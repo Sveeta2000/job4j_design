@@ -23,10 +23,9 @@ public class Config {
                 if (line.matches(".+=.+")) {
                     int index = line.indexOf('=');
                     values.put(line.substring(0, index), line.substring(index + 1));
+                } else if (!line.startsWith("#") && !line.isEmpty()) {
+                    throw new IllegalArgumentException(line);
                 }
-            }
-            if (values.isEmpty()) {
-                throw new IllegalArgumentException();
             }
         } catch (IOException e) {
             e.printStackTrace();

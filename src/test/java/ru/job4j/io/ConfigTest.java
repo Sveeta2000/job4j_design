@@ -3,6 +3,7 @@ package ru.job4j.io;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ConfigTest {
     @Test
@@ -26,23 +27,32 @@ class ConfigTest {
     void whenNoValueThrowException() {
         String path = "./data/no_value.properties";
         Config config = new Config(path);
-        assertThatThrownBy(config::load)
-                .isInstanceOf(IllegalArgumentException.class);
+        IllegalArgumentException ex = assertThrows(
+                IllegalArgumentException.class,
+                config::load
+        );
+        assertThat(ex.getMessage()).isEqualTo("key=");
     }
 
     @Test
     void whenNoKeyThrowException() {
         String path = "./data/no_key.properties";
         Config config = new Config(path);
-        assertThatThrownBy(config::load)
-                .isInstanceOf(IllegalArgumentException.class);
+        IllegalArgumentException ex = assertThrows(
+                IllegalArgumentException.class,
+                config::load
+        );
+        assertThat(ex.getMessage()).isEqualTo("=value");
     }
 
     @Test
     void whenNoKeyAndValueThrowException() {
         String path = "./data/no_key_and_value.properties";
         Config config = new Config(path);
-        assertThatThrownBy(config::load)
-                .isInstanceOf(IllegalArgumentException.class);
+        IllegalArgumentException ex = assertThrows(
+                IllegalArgumentException.class,
+                config::load
+        );
+        assertThat(ex.getMessage()).isEqualTo("=");
     }
 }
