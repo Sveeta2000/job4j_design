@@ -20,11 +20,12 @@ public class Config {
         try (BufferedReader reader = new BufferedReader(new FileReader(this.path))) {
             String line;
             while ((line = reader.readLine()) != null) {
+                if (!line.startsWith("#") && !line.isEmpty() && !(line.matches(".+=.+"))) {
+                    throw new IllegalArgumentException(line);
+                }
                 if (line.matches(".+=.+")) {
                     int index = line.indexOf('=');
                     values.put(line.substring(0, index), line.substring(index + 1));
-                } else if (!line.startsWith("#") && !line.isEmpty()) {
-                    throw new IllegalArgumentException(line);
                 }
             }
         } catch (IOException e) {
