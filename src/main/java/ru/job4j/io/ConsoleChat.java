@@ -22,11 +22,11 @@ public class ConsoleChat {
         Scanner reader = new Scanner(System.in);
         String line = reader.nextLine();
         boolean stopped = false;
-        while (!line.equals(OUT)) {
+        while (!OUT.equals(line)) {
             log.add(line);
-            if (line.equals(STOP)) {
+            if (STOP.equals(line)) {
                 stopped = true;
-            } else if (line.equals(CONTINUE)) {
+            } else if (CONTINUE.equals(line)) {
                 stopped = false;
             }
             if (!stopped) {
