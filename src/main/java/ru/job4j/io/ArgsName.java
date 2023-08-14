@@ -13,6 +13,10 @@ public class ArgsName {
         return values.get(key);
     }
 
+    /**
+     * divides argument lines into keys and values and puts them into the map
+     * @param args the arguments the program is started with
+     */
     private void parse(String[] args) {
         for (String a : args) {
             if (a.matches("-.+=.+")) {
@@ -22,6 +26,11 @@ public class ArgsName {
         }
     }
 
+    /**
+     * checks if the arguments passed are in the correct form, then parses them to fill the Map
+     * @param args the arguments the program is started with
+     * @return an ArgName instance filled with info about the program's arguments
+     */
     public static ArgsName of(String[] args) {
         validateArgs(args);
         ArgsName names = new ArgsName();
