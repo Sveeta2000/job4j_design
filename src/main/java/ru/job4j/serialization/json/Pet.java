@@ -18,6 +18,26 @@ public class Pet {
         this.vaccines = vaccines;
     }
 
+    public String getPetName() {
+        return petName;
+    }
+
+    public boolean isGirl() {
+        return isGirl;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public String[] getVaccines() {
+        return vaccines;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {

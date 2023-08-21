@@ -13,6 +13,18 @@ public final class Owner {
         this.ownerID = ownerID;
     }
 
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public int getOwnerID() {
+        return ownerID;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj == this) {
