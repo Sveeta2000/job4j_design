@@ -22,7 +22,7 @@ class SudokuValidatorTest {
                     {5, 5, 5, 5, 5, 5, 5, 5, 5},
                     {5, 5, 5, 5, 5, 5, 5, 5, 5},
                     {5, 5, 5, 5, 5, 5, 5, 5, 5},
-                    {5, 5, 5, 5, 5, 5, 5, 5, 5}}, false), // A board full of fives
+                    {5, 5, 5, 5, 5, 5, 5, 5, 5}}, false),
             new TestCase(new int[][]{
                     {1, 2, 3, 4, 5, 6, 7, 8, 9},
                     {1, 2, 3, 4, 5, 6, 7, 8, 9},
@@ -32,7 +32,7 @@ class SudokuValidatorTest {
                     {1, 2, 3, 4, 5, 6, 7, 8, 9},
                     {1, 2, 3, 4, 5, 6, 7, 8, 9},
                     {1, 2, 3, 4, 5, 6, 7, 8, 9},
-                    {1, 2, 3, 4, 5, 6, 7, 8, 9}}, false), // All rows are 1..9
+                    {1, 2, 3, 4, 5, 6, 7, 8, 9}}, false),
             new TestCase(new int[][]{
                     {1, 1, 1, 1, 1, 1, 1, 1, 1},
                     {2, 2, 2, 2, 2, 2, 2, 2, 2},
@@ -42,7 +42,7 @@ class SudokuValidatorTest {
                     {6, 6, 6, 6, 6, 6, 6, 6, 6},
                     {7, 7, 7, 7, 7, 7, 7, 7, 7},
                     {8, 8, 8, 8, 8, 8, 8, 8, 8},
-                    {9, 9, 9, 9, 9, 9, 9, 9, 9}}, false),  // All cols are 1..9
+                    {9, 9, 9, 9, 9, 9, 9, 9, 9}}, false),
             new TestCase(new int[][]{
                     {5, 3, 4, 6, 7, 8, 9, 1, 2},
                     {6, 7, 2, 1, 9, 5, 3, 4, 8},
@@ -132,7 +132,7 @@ class SudokuValidatorTest {
                     {3, 1, 5, 4, 8, 0, 7, 2, 6},
                     {5, 6, 4, 0, 1, 7, 3, 8, 2},
                     {7, 8, 1, 3, 2, 4, 6, 5, 0},
-                    {2, 0, 3, 8, 5, 6, 4, 7, 1}}, false), // a valid board, but with 0 instead of 9
+                    {2, 0, 3, 8, 5, 6, 4, 7, 1}}, false),
             new TestCase(new int[][]{
                     {1, 3, 2, 5, 7, 9, 4, 6, 8},
                     {4, 9, 8, 2, 6, 1, 3, 7, 5},
@@ -142,7 +142,7 @@ class SudokuValidatorTest {
                     {9, 8, 7, 4, 2, 6, 5, 3, 1},
                     {2, 1, 4, 9, 3, 5, 6, 8, 7},
                     {3, 6, 5, 8, 1, 7, 9, 2, 4},
-                    {8, 7, 9, 6, 4, 2, 1, 3, 5}}, false), // duplicated '3' in eighth column
+                    {8, 7, 9, 6, 4, 2, 1, 3, 5}}, false),
             new TestCase(new int[][]{
                     {1, 2, 3, 4, 5, 6, 7, 8, 9},
                     {2, 3, 4, 5, 6, 7, 8, 9, 1},
@@ -152,7 +152,7 @@ class SudokuValidatorTest {
                     {6, 7, 8, 9, 1, 2, 3, 4, 5},
                     {7, 8, 9, 1, 2, 3, 4, 5, 6},
                     {8, 9, 1, 2, 3, 4, 5, 6, 7},
-                    {9, 1, 2, 3, 4, 5, 6, 7, 8}}, false), // valid rows and cols, but invalid boxes
+                    {9, 1, 2, 3, 4, 5, 6, 7, 8}}, false),
             new TestCase(new int[][]{
                     {0, 3, 4, 6, 7, 8, 9, 1, 2},
                     {6, 7, 2, 1, 9, 5, 3, 4, 8},
@@ -192,7 +192,7 @@ class SudokuValidatorTest {
                     {7, 8, 9, 1, 2, 3, 4, 5, 6},
                     {1, 2, 3, 4, 5, 6, 7, 8, 9},
                     {4, 5, 6, 7, 8, 9, 1, 2, 3},
-                    {7, 8, 9, 1, 2, 3, 4, 5, 6}}, false)  // valid boxes and rows, repeats in cols
+                    {7, 8, 9, 1, 2, 3, 4, 5, 6}}, false)
     };
 
     private int[][] clone(int[][] board) {
