@@ -35,14 +35,7 @@ create table teen (
 
 insert into teen(name, gender) values ('Jim', 'M'), ('Gary', 'M'), ('Jo', 'F'), ('Mary', 'F');
 
-select males.name as man, females.name as woman
-from (
-	select name, gender
-	from teen
-	where gender = 'M'
-) males
-cross join (
-	select name, gender
-	from teen
-	where gender = 'F'
-) females;
+select t1.name as man, t2.name as woman
+from teen t1
+cross join teen t2
+where t1.gender > t2.gender;
