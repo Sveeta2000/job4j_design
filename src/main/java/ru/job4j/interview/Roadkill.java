@@ -1,13 +1,11 @@
 package ru.job4j.interview;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
 public class Roadkill {
     static String roadKill(final String photo) {
         StringBuilder str = new StringBuilder(photo.replace("=", ""));
-        System.out.println(Arrays.asList(Preloaded.ANIMALS));
         if (str.isEmpty()) {
             return "??";
         }
