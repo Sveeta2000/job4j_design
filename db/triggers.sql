@@ -69,3 +69,27 @@ insert into products (name, producer, count, price) VALUES ('product_2', 'produc
 
 select * from history_of_price;
 select * from products;
+
+insert into products (name, producer, count, price) VALUES ('product_3', 'producer_3', 0, 100);
+
+create or replace function f_delete_products()
+returns void
+language 'plpgsql'
+as
+$$
+    begin
+        delete from products where count <= 0;
+    end;
+$$;
+
+select f_delete_products();
+
+create or replace procedure delete_by_id(d_id integer)
+language 'plpgsql'
+as $$
+    BEGIN
+        delete from products where id = d_id;
+    END;
+$$;
+
+call delete_by_id(11);
