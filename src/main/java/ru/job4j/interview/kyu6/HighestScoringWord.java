@@ -13,8 +13,4 @@ public class HighestScoringWord {
         int highest = scores.indexOf(scores.stream().mapToInt(v -> v).max().orElse(0));
         return strings[highest];
     }
-
-    public static void main(String[] args) {
-        high("ab cd e");
-    }
 }
