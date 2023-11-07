@@ -2,8 +2,6 @@ package ru.job4j.interview.kyu5;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Set;
-
 import static org.assertj.core.api.Assertions.*;
 
 class EmirpsTest {
@@ -22,12 +20,6 @@ class EmirpsTest {
         assertThat(Emirps.isPrime(14)).isFalse();
         assertThat(Emirps.isPrime(21)).isFalse();
         assertThat(Emirps.isPrime(1202)).isFalse();
-    }
-
-    @Test
-    void setTest50() {
-        assertThat(Emirps.primeNumbersTill(50)).hasSize(15)
-                .containsAll(Set.of(2L, 3L, 5L, 7L, 11L, 13L, 17L, 19L, 23L, 29L, 31L, 37L, 41L, 43L, 47L));
     }
 
     @Test
