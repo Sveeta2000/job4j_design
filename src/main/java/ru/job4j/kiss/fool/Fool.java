@@ -56,7 +56,7 @@ public class Fool {
     }
 
     public static boolean isDivBy3And5(int currNumber) {
-        return currNumber % 3 == 0 && currNumber % 5 == 0;
+        return isDivBy5(currNumber) && isDivBy3(currNumber);
     }
 
     public static boolean isDivBy5(int currNumber) {
