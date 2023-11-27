@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.*;
 import java.util.Calendar;
 import java.util.List;
 
-@Disabled("Тесты отключены. Удалить аннотацию после реализации всех методов по заданию.")
+@Disabled("РўРµСЃС‚С‹ РѕС‚РєР»СЋС‡РµРЅС‹. РЈРґР°Р»РёС‚СЊ Р°РЅРЅРѕС‚Р°С†РёСЋ РїРѕСЃР»Рµ СЂРµР°Р»РёР·Р°С†РёРё РІСЃРµС… РјРµС‚РѕРґРѕРІ РїРѕ Р·Р°РґР°РЅРёСЋ.")
 class CinemaTest {
     @Test
     public void whenBuyThenGetTicket() {
@@ -35,7 +35,7 @@ class CinemaTest {
         Calendar date = Calendar.getInstance();
         assertThatThrownBy(() -> cinema.buy(account, -1, 1, date))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("Выбран не существующий ряд");
+                .hasMessage("Р’С‹Р±СЂР°РЅ РЅРµ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РёР№ СЂСЏРґ");
     }
 
     @Test
@@ -43,7 +43,7 @@ class CinemaTest {
         Cinema cinema = new Cinema3D();
         assertThatThrownBy(() -> cinema.find(ses -> false))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("Сеанс не найден");
+                .hasMessage("РЎРµР°РЅСЃ РЅРµ РЅР°Р№РґРµРЅ");
     }
 
     @Test
@@ -54,6 +54,6 @@ class CinemaTest {
         date.set(2023, Calendar.OCTOBER, 20);
         assertThatThrownBy(() -> cinema.buy(account, 1, 1, date))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("Выбрана не существующая дата");
+                .hasMessage("Р’С‹Р±СЂР°РЅР° РЅРµ СЃСѓС‰РµСЃС‚РІСѓСЋС‰Р°СЏ РґР°С‚Р°");
     }
 }
