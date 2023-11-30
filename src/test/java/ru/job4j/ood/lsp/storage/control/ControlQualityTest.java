@@ -20,10 +20,11 @@ class ControlQualityTest {
         controlQuality.addStore(new Warehouse());
         LocalDate created = LocalDate.now().minusDays(1);
         LocalDate expire = LocalDate.now().plusDays(10);
+        LocalDate today = LocalDate.now();
         Food milk = new Milk("Milk", expire, created, new Money(100, "RUB"));
         Food yoghurt = new Yoghurt("Danone", expire, LocalDate.now(), new Money(50, "RUB"));
-        assertThat(controlQuality.checkQuality(milk)).isTrue();
-        assertThat(controlQuality.checkQuality(yoghurt)).isTrue();
+        assertThat(controlQuality.checkQuality(milk, today)).isTrue();
+        assertThat(controlQuality.checkQuality(yoghurt, today)).isTrue();
     }
 
     @Test
@@ -32,8 +33,9 @@ class ControlQualityTest {
         controlQuality.addStore(new Shop());
         LocalDate created = LocalDate.now().minusDays(3);
         LocalDate expire = LocalDate.now().plusDays(7);
+        LocalDate today = LocalDate.now();
         Food milk = new Milk("Milk", expire, created, new Money(100, "RUB"));
-        assertThat(controlQuality.checkQuality(milk)).isTrue();
+        assertThat(controlQuality.checkQuality(milk, today)).isTrue();
     }
 
     @Test
@@ -42,10 +44,11 @@ class ControlQualityTest {
         controlQuality.addStore(new Trash());
         LocalDate created = LocalDate.now().minusDays(10);
         LocalDate expire = LocalDate.now().minusDays(1);
+        LocalDate today = LocalDate.now();
         Food milk = new Milk("Milk", expire, created, new Money(100, "RUB"));
         Food yoghurt = new Yoghurt("Danone", LocalDate.now(), created, new Money(50, "RUB"));
-        assertThat(controlQuality.checkQuality(milk)).isTrue();
-        assertThat(controlQuality.checkQuality(yoghurt)).isTrue();
+        assertThat(controlQuality.checkQuality(milk, today)).isTrue();
+        assertThat(controlQuality.checkQuality(yoghurt, today)).isTrue();
     }
 
     @Test
@@ -55,10 +58,11 @@ class ControlQualityTest {
         controlQuality.addStore(new Shop());
         LocalDate created = LocalDate.now().minusDays(1);
         LocalDate expire = LocalDate.now().plusDays(10);
+        LocalDate today = LocalDate.now();
         Food milk = new Milk("Milk", expire, created, new Money(100, "RUB"));
         Food yoghurt = new Yoghurt("Danone", expire, LocalDate.now(), new Money(50, "RUB"));
-        assertThat(controlQuality.checkQuality(milk)).isFalse();
-        assertThat(controlQuality.checkQuality(yoghurt)).isFalse();
+        assertThat(controlQuality.checkQuality(milk, today)).isFalse();
+        assertThat(controlQuality.checkQuality(yoghurt, today)).isFalse();
     }
 
     @Test
@@ -68,8 +72,9 @@ class ControlQualityTest {
         controlQuality.addStore(new Trash());
         LocalDate created = LocalDate.now().minusDays(3);
         LocalDate expire = LocalDate.now().plusDays(7);
+        LocalDate today = LocalDate.now();
         Food milk = new Milk("Milk", expire, created, new Money(100, "RUB"));
-        assertThat(controlQuality.checkQuality(milk)).isFalse();
+        assertThat(controlQuality.checkQuality(milk, today)).isFalse();
     }
 
     @Test
@@ -79,10 +84,11 @@ class ControlQualityTest {
         controlQuality.addStore(new Shop());
         LocalDate created = LocalDate.now().minusDays(10);
         LocalDate expire = LocalDate.now().minusDays(1);
+        LocalDate today = LocalDate.now();
         Food milk = new Milk("Milk", expire, created, new Money(100, "RUB"));
         Food yoghurt = new Yoghurt("Danone", LocalDate.now(), created, new Money(50, "RUB"));
-        assertThat(controlQuality.checkQuality(milk)).isFalse();
-        assertThat(controlQuality.checkQuality(yoghurt)).isFalse();
+        assertThat(controlQuality.checkQuality(milk, today)).isFalse();
+        assertThat(controlQuality.checkQuality(yoghurt, today)).isFalse();
     }
 
 }

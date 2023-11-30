@@ -1,19 +1,17 @@
 package ru.job4j.ood.lsp.storage.store;
 
-import ru.job4j.ood.lsp.storage.control.DateController;
 import ru.job4j.ood.lsp.storage.model.Food;
 
 public class Shop extends AbstractStore {
-    DateController controller = new DateController();
 
     @Override
     public boolean checkState(Food food) {
-        int lifeLivedPercent = controller.countRemainingShelfLifePercentage(food.getCreateDate(), food.getExpiryDate());
+        double lifeLivedPercent = food.getProductLife();
         boolean result = false;
-        if (lifeLivedPercent >= 75 && lifeLivedPercent < 100) {
-            food.setDiscount(20);
+        if (lifeLivedPercent >= SHOP_START_DISCOUNT_PERCENTAGE && lifeLivedPercent < TRASH_START_PERCENTAGE) {
+            food.setDiscount(DISCOUNT_AMOUNT);
         }
-        if (lifeLivedPercent > 25 && lifeLivedPercent < 100) {
+        if (lifeLivedPercent > WAREHOUSE_HIGHEST_PERCENTAGE && lifeLivedPercent < TRASH_START_PERCENTAGE) {
             result = true;
         }
         return result;

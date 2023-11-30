@@ -18,6 +18,8 @@ public abstract class Food {
      */
     protected int discount;
 
+    protected double productLife;
+
     public Food(String name, LocalDate expiryDate, LocalDate createDate, Money price) {
         this.name = name;
         this.expiryDate = expiryDate;
@@ -65,5 +67,13 @@ public abstract class Food {
         this.discount = discount;
 
         this.price.setAmount(this.price.getAmount() - (this.price.getAmount() * discount / 100));
+    }
+
+    public double getProductLife() {
+        return productLife;
+    }
+
+    public void setProductLife(double productLife) {
+        this.productLife = productLife;
     }
 }
