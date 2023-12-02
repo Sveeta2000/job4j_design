@@ -1,6 +1,5 @@
 package ru.job4j.ood.lsp.parking.storage;
 
-import ru.job4j.interview.kyu6.Likes;
 import ru.job4j.ood.lsp.parking.model.Auto;
 
 import java.util.ArrayList;
