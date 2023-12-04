@@ -7,4 +7,14 @@ public class Car extends Auto {
         this.size = CAR_SIZE;
         this.number = number;
     }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
 }

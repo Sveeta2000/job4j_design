@@ -5,4 +5,14 @@ public class Truck extends Auto {
         this.size = size;
         this.number = number;
     }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
 }
