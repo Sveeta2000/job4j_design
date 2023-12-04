@@ -1,6 +1,5 @@
 package ru.job4j.ood.lsp.parking.storage;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import ru.job4j.ood.lsp.parking.model.Auto;
 import ru.job4j.ood.lsp.parking.model.Car;
@@ -8,7 +7,6 @@ import ru.job4j.ood.lsp.parking.model.Truck;
 
 import static org.assertj.core.api.Assertions.*;
 
-@Disabled
 class ParkingLotTest {
 
     @Test
