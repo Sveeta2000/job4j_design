@@ -12,6 +12,8 @@ class SimpleMenuPrinterTest {
     private final PrintStream standardOut = System.out;
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
+    private final String nextLine = System.lineSeparator();
+
     @Test
     public void whenPrintThenReturnSame() {
         Menu menu = new SimpleMenu();
@@ -21,10 +23,10 @@ class SimpleMenuPrinterTest {
         menu.add("Купить продукты", "Купить хлеб", STUB_ACTION);
         menu.add("Купить продукты", "Купить молоко", STUB_ACTION);
         System.setOut(new PrintStream(outputStreamCaptor));
-        String expected = "--1.Сходить в магазин\r\n"
-                          + "----1.1.Купить продукты\r\n"
-                          + "------1.1.1.Купить хлеб\r\n"
-                          + "------1.1.2.Купить молоко\r\n"
+        String expected = "--1.Сходить в магазин" + nextLine
+                          + "----1.1.Купить продукты" + nextLine
+                          + "------1.1.1.Купить хлеб" + nextLine
+                          + "------1.1.2.Купить молоко" + nextLine
                           + "--2.Покормить собаку";
         new SimpleMenuPrinter().print(menu);
         System.setOut(standardOut);
