@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ControlQuality {
     private List<Store> stores = new ArrayList<>();
-    private DateController controller = new DateController();
+    private final DateController controller = new DateController();
 
     public boolean addStore(Store store) {
         return this.stores.add(store);
@@ -25,5 +25,14 @@ public class ControlQuality {
             }
         }
         return isAllocated;
+    }
+
+    public void resort(LocalDate today) {
+        List<Food> temp = new ArrayList<>();
+        for (Store store : stores) {
+            temp.addAll(store.findAll());
+            store.findAll().clear();
+        }
+        temp.forEach(food -> checkQuality(food, today));
     }
 }
